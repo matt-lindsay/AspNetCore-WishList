@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Security.Permissions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,7 +15,13 @@ namespace WishList.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            return View("Index");
+        }
+
+        // GET: /<controller>/
+        public IActionResult Error()
+        {
+            return View("Error");
         }
     }
 }
