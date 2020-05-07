@@ -17,7 +17,7 @@ namespace WishList.Controllers
 
         public ItemController(ApplicationDbContext context)
         {
-            context = _context;
+            _context = context;
         }
 
         // GET: /<controller>/
@@ -44,7 +44,7 @@ namespace WishList.Controllers
 
         public IActionResult Delete(int Id)
         {
-            var item = _context.Items.SingleOrDefault(i => i.Id == Id);
+            var item = _context.Items.Single(i => i.Id == Id);
             _context.Items.Remove(item);
             _context.SaveChanges();
             return RedirectToAction("Index");
